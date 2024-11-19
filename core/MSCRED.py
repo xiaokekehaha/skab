@@ -148,9 +148,7 @@ class MSCRED:
             return_sequences=True,
             name="convLSTM1",
         )(conv1)
-        convLSTM1_out = MyAttentionLayer(self.attention)(
-            convLSTM1, **{"koef": 1}
-        )
+        convLSTM1_out = MyAttentionLayer(self.attention)(convLSTM1, **{"koef": 1})
 
         convLSTM2 = ConvLSTM2D(
             filters=64,
@@ -159,9 +157,7 @@ class MSCRED:
             return_sequences=True,
             name="convLSTM2",
         )(conv2)
-        convLSTM2_out = MyAttentionLayer(self.attention)(
-            convLSTM2, **{"koef": 2}
-        )
+        convLSTM2_out = MyAttentionLayer(self.attention)(convLSTM2, **{"koef": 2})
 
         convLSTM3 = ConvLSTM2D(
             filters=128,
@@ -170,9 +166,7 @@ class MSCRED:
             return_sequences=True,
             name="convLSTM3",
         )(conv3)
-        convLSTM3_out = MyAttentionLayer(self.attention)(
-            convLSTM3, **{"koef": 4}
-        )
+        convLSTM3_out = MyAttentionLayer(self.attention)(convLSTM3, **{"koef": 4})
 
         convLSTM4 = ConvLSTM2D(
             filters=256,
@@ -181,9 +175,7 @@ class MSCRED:
             return_sequences=True,
             name="convLSTM4",
         )(conv4)
-        convLSTM4_out = MyAttentionLayer(self.attention)(
-            convLSTM4, **{"koef": 8}
-        )
+        convLSTM4_out = MyAttentionLayer(self.attention)(convLSTM4, **{"koef": 8})
 
         deconv4 = Conv2DTranspose(
             filters=128,

@@ -93,6 +93,7 @@ class Vanilla_LSTM:
             shuffle=False,
             callbacks=[early_stopping, reduce_lr],
         )
+        
 
     def predict(self, data):
         """
